@@ -8,7 +8,7 @@ export type Field = {
 export const contact = {
   heading: "Let's talk.",
   intro:
-    "I am open to frontend and full-stack roles in Dubai, Germany and remote. I reply within a day, usually much less.",
+    "I'm a frontend engineer open to frontend and AI-integrated roles in Dubai, Germany and remote. I reply within a day, usually much less.",
   submit: "Send it over",
   sending: "Sending…",
   success: "Thank you — that reached me. I will reply within a day.",

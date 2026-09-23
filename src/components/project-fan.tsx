@@ -50,21 +50,30 @@ export function ProjectFan() {
             onBlur={() => setActive(null)}
           >
             <span className="project-card__frame">
-              <Image
-                src={project.image}
-                alt={`${project.name} — ${project.stack}`}
-                fill
-                sizes="(max-width: 767px) calc(100vw - 48px), 300px"
-                className="object-cover object-top md:object-center"
-              />
+              <span className="project-card__image">
+                <Image
+                  src={project.image}
+                  alt={`${project.name} — ${project.stack.join(", ")}`}
+                  fill
+                  sizes="(max-width: 767px) calc(100vw - 48px), 300px"
+                  className="object-cover object-top md:object-center"
+                />
+              </span>
 
-              <span className="project-card__caption">
-                <span className="type-strong block text-lg text-cream">
-                  {project.name}
+              <span className="project-card__overlay">
+                <span className="project-card__name">{project.name}</span>
+                <span className="project-card__stack">
+                  {project.stack.map((tech) => (
+                    <span key={tech} className="project-card__pill">
+                      {tech}
+                    </span>
+                  ))}
                 </span>
-                <span className="type-mono mt-1 block text-[13px] text-cream lg:text-[0.7rem]">
-                  {project.stack}
-                </span>
+                {project.description && (
+                  <span className="project-card__desc">
+                    {project.description}
+                  </span>
+                )}
               </span>
             </span>
           </a>

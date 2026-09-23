@@ -16,7 +16,7 @@ export type SkillGroup = {
 };
 
 export const intro: readonly string[] = [
-  "I am a software engineer with around five years of experience, mostly building frontend products with React and TypeScript. I started out building educational web games in İzmir and later shipped banking platforms in Berlin. Along the way I completed the academic requirements for an MSc in Data Analytics and wrote my thesis on generative AI in banking, which is how I became interested in building products where AI is part of the engineering rather than the marketing.",
+  "I am a software engineer with around five years of experience, mostly building frontend products with React and TypeScript. I started out building educational web games in Izmir and later shipped banking platforms in Berlin. Along the way I completed the academic requirements for an MSc in Data Analytics and wrote my thesis on generative AI in banking, which is how I became interested in building products where AI is part of the engineering rather than the marketing.",
   "I have completed the academic requirements for my master's and I am looking for the next place to build things for the long term.",
 ];
 
@@ -46,14 +46,14 @@ export const experience: readonly Position[] = [
   },
   {
     title: "Web Game Developer — LTA Teknoloji / DAS Akademie",
-    meta: "İzmir, Türkiye · December 2021 – February 2023",
+    meta: "Izmir, Türkiye · December 2021 – February 2023",
     points: [
       "Built interactive educational web games in JavaScript, Phaser, HTML5 and CSS, focused on rendering performance across devices.",
     ],
   },
   {
     title: "Software Engineer — Mepsan",
-    meta: "İzmir, Türkiye · December 2020 – December 2021",
+    meta: "Izmir, Türkiye · December 2020 – December 2021",
     points: [
       "First engineering role, working across the stack on POS products: browser interfaces in vanilla JavaScript, and contributions to backend services in Python, Flask and MongoDB.",
     ],
@@ -70,8 +70,8 @@ export const education: readonly Degree[] = [
     ],
   },
   {
-    title: "BSc, Computer Engineering — İzmir University of Economics",
-    meta: "İzmir, Türkiye · 2015 – 2020",
+    title: "BSc, Computer Engineering — Izmir University of Economics",
+    meta: "Izmir, Türkiye · 2015 – 2020",
     notes: [],
   },
 ];

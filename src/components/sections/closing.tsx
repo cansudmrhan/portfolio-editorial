@@ -21,7 +21,7 @@ export function Closing() {
 
       <Link
         href={closing.cta.href}
-        className="type-strong mt-8 inline-flex min-h-11 w-fit items-center text-blue text-[clamp(1.25rem,2.2vw,1.75rem)] underline underline-offset-8 md:mt-[5dvh]"
+        className="type-strong mt-12 inline-flex min-h-11 w-fit items-center text-blue text-[clamp(1.25rem,2.2vw,1.75rem)] underline underline-offset-8 md:mt-[5dvh]"
       >
         {closing.cta.label}
       </Link>

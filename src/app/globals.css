@@ -175,17 +175,66 @@
     overflow: hidden;
   }
 
-  .project-card__caption {
+  .project-card__image {
     position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    inset: 0;
+    transform: scale(1);
+    filter: blur(0);
+    transition:
+      transform 0.45s cubic-bezier(0.4, 0, 0.2, 1),
+      filter 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform;
+  }
+
+  /* Mobile: a scrim pinned to the bottom, always showing. */
+  .project-card__overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
     padding: 3.5rem 1.25rem 1.25rem;
     background-image: linear-gradient(
       to top,
       color-mix(in srgb, var(--color-ink) 92%, transparent),
       transparent
     );
+  }
+
+  .project-card__name {
+    font-family: var(--font-strong);
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    font-size: 1.125rem;
+    color: var(--color-cream);
+  }
+
+  .project-card__stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+    margin-top: 0.5rem;
+  }
+
+  .project-card__pill {
+    font-family: var(--font-mono);
+    font-size: 0.625rem;
+    line-height: 1;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-blue);
+    background: color-mix(in srgb, var(--color-blue) 16%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-blue) 45%, transparent);
+    border-radius: 999px;
+    padding: 0.3125rem 0.625rem;
+  }
+
+  .project-card__desc {
+    margin-top: 0.5rem;
+    font-weight: 400;
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    color: var(--color-grey-300);
   }
 
   /* From md up the stack becomes a held hand of cards. */
@@ -213,16 +262,50 @@
       aspect-ratio: auto;
     }
 
-    /* The caption only appears on the card that has lifted out of the fan. */
-    .project-card__caption {
+    /* A flat #fafafa layer sits over the screenshot and fades + lifts in on
+       hover; the screenshot beneath scales and blurs slightly in the same
+       breath so the reveal reads as one smooth motion either direction. */
+    .project-card__overlay {
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2rem;
+      background-image: none;
+      background-color: #fafafa;
       opacity: var(--caption);
-      transition: opacity 280ms cubic-bezier(0.165, 0.84, 0.44, 1);
+      transition: opacity 0.45s cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: opacity;
+    }
+
+    .project-card__image {
+      transform: scale(calc(1 + var(--caption) * 0.06));
+      filter: blur(calc(var(--caption) * 3px));
+    }
+
+    .project-card__name {
+      font-size: 1.5rem;
+      color: #111;
+    }
+
+    .project-card__stack {
+      margin-top: 0.75rem;
+    }
+
+    .project-card__pill {
+      background: color-mix(in srgb, var(--color-blue) 10%, transparent);
+      border-color: color-mix(in srgb, var(--color-blue) 35%, transparent);
+    }
+
+    .project-card__desc {
+      margin-top: 0.75rem;
+      font-size: 0.875rem;
+      color: #555;
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .project-card,
-    .project-card__caption {
+    .project-card__overlay,
+    .project-card__image {
       transition: none;
     }
   }
@@ -256,8 +339,14 @@
       aspect-ratio: 4 / 3;
     }
 
-    .project-card__caption {
+    .project-card__overlay {
       padding: 3rem 1rem 1rem;
+    }
+
+    /* Lines and the CTA below felt cramped on small screens; desktop is
+       untouched since .type-display already sets line-height: 0.9 there. */
+    #closing-heading {
+      line-height: 1.25;
     }
   }
 }

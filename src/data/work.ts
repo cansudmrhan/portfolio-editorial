@@ -31,7 +31,7 @@ export const studies: readonly Study[] = [
     award: "MSc Data Analytics · academic requirements completed · degree expected January 2027",
   },
   {
-    school: "İzmir University of Economics",
+    school: "Izmir University of Economics",
     award: "BSc Computer Engineering · 2015 – 2020",
   },
 ];
